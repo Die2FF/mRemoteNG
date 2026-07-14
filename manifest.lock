@@ -1,0 +1,64 @@
+schemaVersion: 1
+rootManifestHash: 95df21bac42b330dff7262365531134721c739c48ef071a13336ebcc6e1dc06c
+generatedAt: '1784041334'
+templates:
+- reference: github:inditex/cac-moyaagentrules#templates/itx-coding
+  sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+  origin: template:github:inditex/cac-moyaagentrules#templates/amiga-python-2
+- reference: github:inditex/cac-moyaagentrules#templates/amiga-python-2
+  sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+  origin: user
+packages:
+  inditex_cac-moyaagentrules:
+    declared:
+      source: github:inditex/cac-moyaagentrules
+      select:
+        skills:
+        - gh-pr-create
+        - gh-pr-comment
+        - agents-md
+        - skill-creator
+        - paas-config
+        mcps:
+        - devhub
+        - amiga-python-2
+        - geppetto
+        - jira
+        agents:
+        - code-review/code-review
+    source: github:inditex/cac-moyaagentrules
+    selectHash: c31aca4bfdcfcf59
+    sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+    origin: user manifest
+    position: 0
+  moya:
+    declared:
+      name: moya
+      source: github:inditex/cac-moyaagentrules
+      select:
+        skills:
+        - aidev-code
+        - conventional-commits
+        - gh-issue-create
+        - gh-issue-comment
+        - gh-pr-create
+        - gh-pr-comment
+        - paas-config
+        - asdf-allowlist
+        - asdf-command-not-found
+        - asdf-plugin-add
+        - asdf-version-install
+        - asdf-version-set
+        - version-catalog-upgrade
+        mcps:
+        - git-workflow
+        - amiga-python-2
+        agents:
+        - aidev-coder/AIDevCoder
+        tools:
+        - aidevtracker
+    source: github:inditex/cac-moyaagentrules
+    selectHash: 9e82d28e9901a44d
+    sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+    origin: template:github:inditex/cac-moyaagentrules#templates/itx-coding
+    position: 1
