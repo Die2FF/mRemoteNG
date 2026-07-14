@@ -1,6 +1,6 @@
 schemaVersion: 1
-rootManifestHash: 1bb8a76fe905e918dfc4d92b0bf75c0d70bf848bb50a0cb031e77deb250e7973
-generatedAt: '1784041428'
+rootManifestHash: 68978ff16799cd5fbdb70491167ca19e5908b189efde2833e2af7d9c9a69f7e2
+generatedAt: '1784041695'
 templates:
 - reference: github:inditex/cac-moyaagentrules#templates/itx-coding
   sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
@@ -19,6 +19,8 @@ packages:
         - agents-md
         - skill-creator
         - paas-config
+        prompts:
+        - common/init
         mcps:
         - devhub
         - amiga-python-2
@@ -27,7 +29,7 @@ packages:
         agents:
         - code-review/code-review
     source: github:inditex/cac-moyaagentrules
-    selectHash: c31aca4bfdcfcf59
+    selectHash: a67b17923136c355
     sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
     origin: user manifest
     position: 0
