@@ -348,17 +348,32 @@ namespace mRemoteNG.UI.Forms
             if (topPanel == null)
                 return;
 
-            // Always visible and docked on the top toolbar panel.
+            // Put the main menu and QuickConnect on a single shared row. DockPanelSuite
+            // assigns rows based on each toolstrip's Y coordinate, so both must be joined
+            // at Y=0, with QuickConnect placed directly to the right of the menu. Joining
+            // the menu first guarantees its Right edge is known before positioning
+            // QuickConnect. Right-aligning (previous behaviour) pushed QuickConnect onto a
+            // separate row when the panel width wasn't final yet (fresh configuration).
+            topPanel.SuspendLayout();
+
             _quickConnectToolStrip.Visible = true;
+
+            if (msMain != null)
+            {
+                if (msMain.Parent != topPanel)
+                    topPanel.Join(msMain);
+                topPanel.Join(msMain, new Point(0, 0));
+            }
+
+            int x = 0;
+            if (msMain != null && msMain.Parent == topPanel)
+                x = msMain.Location.X + msMain.Width + 3;
+
             if (_quickConnectToolStrip.Parent != topPanel)
                 topPanel.Join(_quickConnectToolStrip);
-
-            // Right align on row 0 (same line as the main menu).
-            int x = topPanel.Width - _quickConnectToolStrip.Width - topPanel.Padding.Right - 3;
-            if (x < 0)
-                x = 0;
-
             topPanel.Join(_quickConnectToolStrip, new Point(x, 0));
+
+            topPanel.ResumeLayout(true);
         }
 
         private void ConnectionsServiceOnConnectionsLoaded(object? sender, ConnectionsLoadedEventArgs connectionsLoadedEventArgs)
@@ -433,6 +448,11 @@ namespace mRemoteNG.UI.Forms
             Activate();
             BringToFront();
             NativeMethods.SetForegroundWindow(Handle);
+
+            // Re-align QuickConnect onto the menu row now that the window is shown and the
+            // top toolbar panel has its final width. Doing it only during Load can leave it
+            // on a second row when there is no saved toolbar layout (fresh configuration).
+            PositionQuickConnectToolbarRight();
 
             PromptForUpdatesPreference();
             await CheckForUpdates();

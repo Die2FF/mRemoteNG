@@ -96,7 +96,10 @@ namespace mRemoteNG.Tools
 
         private static void nI_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (FrmMain.Visible)
+            // The window counts as "shown in tray" when it is either hidden or minimized.
+            // Treat both cases as needing a restore so a single double-click always brings
+            // the window back, instead of requiring an extra click just to toggle state.
+            if (FrmMain.Visible && FrmMain.WindowState != FormWindowState.Minimized)
             {
                 HideForm();
                 FrmMain.ShowInTaskbar = false;
@@ -111,7 +114,11 @@ namespace mRemoteNG.Tools
         private static void ShowForm()
         {
             FrmMain.Show();
-            FrmMain.WindowState = FrmMain.PreviousWindowState;
+            // Never restore to Minimized, otherwise the window would immediately hide
+            // again. Fall back to Normal when no valid previous state was recorded.
+            FrmMain.WindowState = FrmMain.PreviousWindowState == FormWindowState.Minimized
+                ? FormWindowState.Normal
+                : FrmMain.PreviousWindowState;
 
             if (Properties.OptionsAppearancePage.Default.ShowSystemTrayIcon) return;
             Runtime.NotificationAreaIcon.Dispose();
@@ -120,8 +127,11 @@ namespace mRemoteNG.Tools
 
         private static void HideForm()
         {
+            // Only remember a real (non-minimized) state so the window can be restored to
+            // it later. Remembering Minimized would make ShowForm re-minimize immediately.
+            if (FrmMain.WindowState != FormWindowState.Minimized)
+                FrmMain.PreviousWindowState = FrmMain.WindowState;
             FrmMain.Hide();
-            FrmMain.PreviousWindowState = FrmMain.WindowState;
         }
 
         private void ConMenItem_MouseUp(object sender, MouseEventArgs e)

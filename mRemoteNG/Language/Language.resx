@@ -2362,6 +2362,9 @@ Nightly Channel includes Alphas, Betas &amp; Release Candidates.</value>
   <data name="ECPNone" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="ECPWindowsCredentialManager" xml:space="preserve">
+    <value>Windows Credential Manager</value>
+  </data>
   <data name="EAPAmazonWebServices" xml:space="preserve">
     <value>AmazonEC2</value>
   </data>
@@ -2464,6 +2467,36 @@ Nightly Channel includes Alphas, Betas &amp; Release Candidates.</value>
   </data>
   <data name="StartFullScreen" xml:space="preserve">
     <value>Start Full Screen</value>
+  </data>
+  <data name="DisableRefocus" xml:space="preserve">
+    <value>Disable Refocus</value>
+  </data>
+  <data name="BindConnectionsAndConfigPanels" xml:space="preserve">
+    <value>Bind Connections and Config panels together when auto-hidden</value>
+  </data>
+  <data name="SecureKeyGenerator" xml:space="preserve">
+    <value>Secure Key Generator</value>
+  </data>
+  <data name="SecureKeyGeneratorDescription" xml:space="preserve">
+    <value>Generate an encrypted password suitable for registry settings.</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Copy to Clipboard</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="BackupToFile" xml:space="preserve">
+    <value>to File</value>
+  </data>
+  <data name="BackupToDB" xml:space="preserve">
+    <value>to DB</value>
+  </data>
+  <data name="ConnectionsBackupFrequencyOnSave" xml:space="preserve">
+    <value>On Save</value>
   </data>
   <data name="ReconnectToPreviouslyOpenedSessionsOnStartup" xml:space="preserve">
     <value>ReconnectToPreviouslyOpenedSessionsOnStartup</value>

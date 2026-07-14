@@ -176,6 +176,17 @@ namespace mRemoteNG.UI.Forms.OptionsPages
             lblMakeBackup.Text = Language.strConnectionBackupFrequency;
             lblConnectionsBackupMaxCount.Text = Language.strConnectionsBackupMaxCount;
             lblConnectionsBackupPath.Text = Language.strConnectionsBackupPath;
+
+            lblBackupEnable.Text = Language.lblBackupEnable;
+            lblBackupType.Text = Language.lblBackupType;
+            lblBackupNameFormat.Text = Language.lblBackupNameFormat;
+            rbBackupEnableEnable.Text = Language.Enable;
+            rbBackupEnableDisable.Text = Language.Disable;
+            radioButton1.Text = Language.BackupToFile;
+            radioButton2.Text = Language.BackupToDB;
+            cbMakeBackupOnSave.Text = Language.ConnectionsBackupFrequencyOnSave;
+            cbMakeBackupOnEdit.Text = Language.ConnectionsBackupFrequencyOnEdit;
+            cbMakeBackupOnExit.Text = Language.ConnectionsBackupFrequencyOnExit;
         }
 
         public override void LoadSettings()
