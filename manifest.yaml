@@ -1,5 +1,5 @@
-remote-config: "https://github.com/Die2FF/mRemoteNG.git"
 name: mRemoteNG
+remote-config: "https://github.com/Die2FF/mRemoteNG.git"
 version: 1.0.0
 description: AI context for repos
 
@@ -73,6 +73,7 @@ marketplace:
 #       Authorization: "Bearer ${DOCS_TOKEN}"
 templates:
 - github:inditex/cac-moyaagentrules#templates/amiga-python-2
+- github:inditex/cac-moyaagentrules#templates/itx-coding
 repos:
 - name: cac-tempeansible
   source: https://github.com/inditex/cac-tempeansible
