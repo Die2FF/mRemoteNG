@@ -1889,6 +1889,15 @@ namespace mRemoteNG.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windows Credential Manager.
+        /// </summary>
+        internal static string ECPWindowsCredentialManager {
+            get {
+                return ResourceManager.GetString("ECPWindowsCredentialManager", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1Password.
         /// </summary>
         internal static string ECPOnePassword {
@@ -6474,6 +6483,66 @@ namespace mRemoteNG.Resources.Language {
         internal static string StartFullScreen {
             get {
                 return ResourceManager.GetString("StartFullScreen", resourceCulture);
+            }
+        }
+        
+        internal static string DisableRefocus {
+            get {
+                return ResourceManager.GetString("DisableRefocus", resourceCulture);
+            }
+        }
+        
+        internal static string BindConnectionsAndConfigPanels {
+            get {
+                return ResourceManager.GetString("BindConnectionsAndConfigPanels", resourceCulture);
+            }
+        }
+        
+        internal static string SecureKeyGenerator {
+            get {
+                return ResourceManager.GetString("SecureKeyGenerator", resourceCulture);
+            }
+        }
+        
+        internal static string SecureKeyGeneratorDescription {
+            get {
+                return ResourceManager.GetString("SecureKeyGeneratorDescription", resourceCulture);
+            }
+        }
+        
+        internal static string CopyToClipboard {
+            get {
+                return ResourceManager.GetString("CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        internal static string Enable {
+            get {
+                return ResourceManager.GetString("Enable", resourceCulture);
+            }
+        }
+        
+        internal static string Disable {
+            get {
+                return ResourceManager.GetString("Disable", resourceCulture);
+            }
+        }
+        
+        internal static string BackupToFile {
+            get {
+                return ResourceManager.GetString("BackupToFile", resourceCulture);
+            }
+        }
+        
+        internal static string BackupToDB {
+            get {
+                return ResourceManager.GetString("BackupToDB", resourceCulture);
+            }
+        }
+        
+        internal static string ConnectionsBackupFrequencyOnSave {
+            get {
+                return ResourceManager.GetString("ConnectionsBackupFrequencyOnSave", resourceCulture);
             }
         }
         
