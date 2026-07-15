@@ -81,6 +81,9 @@ repos:
 - name: mRemoteNG
   source: https://github.com/Die2FF/mRemoteNG
   propagate_context: true
+- name: iac-elinfratempeendurance
+  source: https://github.com/inditex/iac-elinfratempeendurance.git
+  propagate_context: true
 packages:
 - source: github:inditex/cac-moyaagentrules
   select:
