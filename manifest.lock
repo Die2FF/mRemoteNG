@@ -1,12 +1,12 @@
 schemaVersion: 1
 rootManifestHash: f116df26ac72e7bb4705bdcf8af08226bce51ba8091a96a39e4d6a49b75ddc93
-generatedAt: '1784098117'
+generatedAt: '1784100352'
 templates:
 - reference: github:inditex/cac-moyaagentrules#templates/itx-coding
-  sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+  sha: 60164ec088a9520b2ded1868104a814f169b2572
   origin: template:github:inditex/cac-moyaagentrules#templates/amiga-python-2
 - reference: github:inditex/cac-moyaagentrules#templates/amiga-python-2
-  sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+  sha: 60164ec088a9520b2ded1868104a814f169b2572
   origin: user
 packages:
   inditex_cac-moyaagentrules:
@@ -30,7 +30,7 @@ packages:
         - code-review/code-review
     source: github:inditex/cac-moyaagentrules
     selectHash: a67b17923136c355
-    sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+    sha: 60164ec088a9520b2ded1868104a814f169b2572
     origin: user manifest
     position: 0
   moya:
@@ -61,6 +61,6 @@ packages:
         - aidevtracker
     source: github:inditex/cac-moyaagentrules
     selectHash: 9e82d28e9901a44d
-    sha: b2cc93d4a0c607c22ae889d7aa97dd64441a1573
+    sha: 60164ec088a9520b2ded1868104a814f169b2572
     origin: template:github:inditex/cac-moyaagentrules#templates/itx-coding
     position: 1
