@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ButtonDefaultProperties" xml:space="preserve">
-    <value>Propiedades por defecto</value>
+    <value>Propiedades predeterminadas</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
     <value>Desconectar</value>
@@ -127,28 +127,28 @@
     <value>Icono</value>
   </data>
   <data name="ButtonLaunchPutty" xml:space="preserve">
-    <value>Ejecutar PuTTY</value>
+    <value>Iniciar PuTTY</value>
   </data>
   <data name="_Ok" xml:space="preserve">
-    <value>&amp; OK</value>
+    <value>&amp;OK</value>
   </data>
   <data name="Properties" xml:space="preserve">
     <value>Propiedades</value>
   </data>
   <data name="_Scan" xml:space="preserve">
-    <value>&amp; Scanear</value>
+    <value>&amp;Escanear</value>
   </data>
   <data name="_Stop" xml:space="preserve">
-    <value>&amp; Parar</value>
+    <value>&amp;Parar</value>
   </data>
   <data name="TestProxy" xml:space="preserve">
-    <value>Probar Proxy</value>
+    <value>Probar proxy</value>
   </data>
   <data name="Miscellaneous" xml:space="preserve">
     <value>Varios</value>
   </data>
   <data name="CheckboxAutomaticReconnect" xml:space="preserve">
-    <value>Intentar reconectar automáticamente cuando se desconecte (solo para RDP &amp;&amp; ICA)</value>
+    <value>Intentar reconectar automáticamente cuando se desconecte (solo para RDP e ICA)</value>
   </data>
   <data name="CheckboxDoNotShowThisMessageAgain" xml:space="preserve">
     <value>No mostrar este mensaje de nuevo.</value>
@@ -157,58 +157,58 @@
     <value>Este servidor proxy requiere autenticación</value>
   </data>
   <data name="CheckboxPuttyPath" xml:space="preserve">
-    <value>Usar ruta de Putty personalizada:</value>
+    <value>Usar ruta de PuTTY personalizada:</value>
   </data>
   <data name="CheckboxReconnectWhenReady" xml:space="preserve">
-    <value>Vuelva a conectarse cuando esté listo</value>
+    <value>Volver a conectar cuando esté listo</value>
   </data>
   <data name="CheckboxUpdateUseProxy" xml:space="preserve">
     <value>Usar un servidor proxy para conectarse</value>
   </data>
   <data name="Username" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Nombre de usuario</value>
   </data>
   <data name="WaitForExit" xml:space="preserve">
-    <value>Esperar a Salir</value>
+    <value>Esperar a que salga</value>
   </data>
   <data name="CheckAgain" xml:space="preserve">
-    <value>Pruebe nuevamente</value>
+    <value>Comprobar de nuevo</value>
   </data>
   <data name="CheckForUpdatesOnStartup" xml:space="preserve">
-    <value>Comprobar las actualizaciones y anuncios en el inicio</value>
+    <value>Comprobar las actualizaciones y novedades al iniciar</value>
   </data>
   <data name="CheckNow" xml:space="preserve">
-    <value>Compruebe ahora</value>
+    <value>Comprobar ahora</value>
   </data>
   <data name="CheckProperInstallationOfComponentsAtStartup" xml:space="preserve">
-    <value>Verifique la correcta instalación de los componentes en el inicio</value>
+    <value>Comprobar la instalación correcta de los componentes al iniciar</value>
   </data>
   <data name="ChoosePanelBeforeConnecting" xml:space="preserve">
-    <value>Elija el panel antes de conectarse</value>
+    <value>Elegir el panel antes de conectar</value>
   </data>
   <data name="ClosedPorts" xml:space="preserve">
-    <value>Puertos Cerrados</value>
+    <value>Puertos cerrados</value>
   </data>
   <data name="CollapseAllFolders" xml:space="preserve">
     <value>Contraer todas las carpetas</value>
   </data>
   <data name="ConfigPropertyGridButtonIconClickFailed" xml:space="preserve">
-    <value>btnIcon_Click falló!</value>
+    <value>¡Error en btnIcon_Click!</value>
   </data>
   <data name="ConfirmCloseConnectionPanelMainInstruction" xml:space="preserve">
-    <value>¿Está seguro que desea cerrar el panel, "{0}"? Cualquier conexión que contenga el panel también estará cerrada.</value>
+    <value>¿Está seguro de que desea cerrar el panel "{0}"? También se cerrarán las conexiones que contenga.</value>
   </data>
   <data name="ConfirmDeleteNodeFolder" xml:space="preserve">
-    <value>¿Está seguro que desea eliminar la carpeta vacía, "{0}"?</value>
+    <value>¿Está seguro de que desea eliminar la carpeta vacía "{0}"?</value>
   </data>
   <data name="ConfirmDeleteNodeFolderNotEmpty" xml:space="preserve">
-    <value>¿Está seguro que desea eliminar la carpeta "{0}"? También se eliminará cualquier carpetas o conexiones que contiene.</value>
+    <value>¿Está seguro de que desea eliminar la carpeta "{0}"? También se eliminarán las carpetas o conexiones que contiene.</value>
   </data>
   <data name="ConfirmExitMainInstruction" xml:space="preserve">
     <value>¿Desea cerrar todas las conexiones abiertas?</value>
   </data>
   <data name="ConfirmResetLayout" xml:space="preserve">
-    <value>¿Estás seguro que deseas restablecer los paneles a su diseño predeterminado?</value>
+    <value>¿Está seguro de que desea restablecer los paneles a su diseño predeterminado?</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Conectar</value>
@@ -223,43 +223,43 @@
     <value>¡Error de conexión!</value>
   </data>
   <data name="ConnectionOpenFailed" xml:space="preserve">
-    <value>No se pudo abrir la conexión!</value>
+    <value>¡No se pudo abrir la conexión!</value>
   </data>
   <data name="ConnectionOpenFailedNoHostname" xml:space="preserve">
-    <value>No se puede abrir la conexión: ningún nombre de host especificado!</value>
+    <value>No se puede abrir la conexión: no se especificó ningún nombre de host.</value>
   </data>
   <data name="Connections" xml:space="preserve">
     <value>Conexiones</value>
   </data>
   <data name="ConnectionSetDefaultPortFailed" xml:space="preserve">
-    <value>No se ha podido establecer el puerto predeterminado!</value>
+    <value>¡No se pudo establecer el puerto predeterminado!</value>
   </data>
   <data name="ConnectionsFileBackupFailed" xml:space="preserve">
-    <value>No se pudo crear copia de seguridad del archivo de conexiones!</value>
+    <value>¡No se pudo crear una copia de seguridad del archivo de conexiones!</value>
   </data>
   <data name="ConnectionsFileCouldNotBeLoaded" xml:space="preserve">
-    <value>No se pudo cargar el archivo de conexiones "{0}"!</value>
+    <value>¡No se pudo cargar el archivo de conexiones "{0}"!</value>
   </data>
   <data name="ConnectionsFileCouldNotSaveAs" xml:space="preserve">
-    <value>No se pudo guardar archivo de conexiones como "{0}"!</value>
+    <value>¡No se pudo guardar el archivo de conexiones como "{0}"!</value>
   </data>
   <data name="ConnectToConsoleSession" xml:space="preserve">
-    <value>Conectar con la sesión de consola</value>
+    <value>Conectar a la sesión de consola</value>
   </data>
   <data name="ConnectWithOptions" xml:space="preserve">
     <value>Conectar (con opciones)</value>
   </data>
   <data name="ConnenctionClosedByUser" xml:space="preserve">
-    <value>Conexión a {0} {1} vía cerrada por usuario {2}.</value>
+    <value>Conexión a {0} vía {1} cerrada por el usuario {2}.</value>
   </data>
   <data name="ConnenctionCloseEvent" xml:space="preserve">
     <value>Evento de conexión cerrada</value>
   </data>
   <data name="ConnenctionCloseEventFailed" xml:space="preserve">
-    <value>Evento de cerrar conexión falló!</value>
+    <value>¡Falló el evento de cierre de conexión!</value>
   </data>
   <data name="CouldNotCreateNewConnectionsFile" xml:space="preserve">
-    <value>No se pudo crear el nuevo archivo de conexiones!</value>
+    <value>¡No se pudo crear el nuevo archivo de conexiones!</value>
   </data>
   <data name="Detect" xml:space="preserve">
     <value>Detectar</value>
@@ -277,76 +277,75 @@
     <value>¿Desea continuar sin contraseña?</value>
   </data>
   <data name="EmptyUsernamePasswordDomainFields" xml:space="preserve">
-    <value>Si desea Nombre de usuario, password o dominio vacio use:</value>
+    <value>Si desea dejar vacíos los campos de nombre de usuario, contraseña o dominio, use:</value>
   </data>
   <data name="EncryptCompleteConnectionFile" xml:space="preserve">
-    <value>Encriptar completamente el archivo de conexiones</value>
+    <value>Cifrar completamente el archivo de conexiones</value>
   </data>
   <data name="LastIp" xml:space="preserve">
-    <value>Último IP</value>
+    <value>Última IP</value>
   </data>
   <data name="LastPort" xml:space="preserve">
     <value>Último puerto</value>
   </data>
   <data name="ErrorAddExternalToolsToToolBarFailed" xml:space="preserve">
-    <value>BarraAgregarHerramientasExternas (frmMain) falló. {0}</value>
+    <value>Error en AgregarHerramientasExternasALaBarra (frmMain). {0}</value>
   </data>
   <data name="ErrorBadDatabaseVersion" xml:space="preserve">
     <value>La versión de la base de datos {0} no es compatible con esta versión de {1}.</value>
   </data>
   <data name="ErrorConnectionListSaveFailed" xml:space="preserve">
-    <value>La lista de conexiones no pudo ser guardada.</value>
+    <value>No se pudo guardar la lista de conexiones.</value>
   </data>
   <data name="ErrorDecryptionFailed" xml:space="preserve">
-    <value>La decriptación falló. {0}</value>
+    <value>El descifrado falló. {0}</value>
   </data>
   <data name="ErrorEncryptionFailed" xml:space="preserve">
-    <value>La encriptación falló. {0}</value>
+    <value>El cifrado falló. {0}</value>
   </data>
   <data name="Errors" xml:space="preserve">
     <value>Errores</value>
   </data>
   <data name="ErrorVerifyDatabaseVersionFailed" xml:space="preserve">
-    <value>VerificarVersionBasedeDatos (Config.Connections.Save) falló. {0}</value>
+    <value>Error en VerificarVersiónDeBaseDeDatos (Config.Connections.Save). {0}</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="VaultOpenbao" xml:space="preserve">
-    <value></value>
+    <value>Vault u OpenBao</value>
   </data>
   <data name="VaultOpenbaoMount" xml:space="preserve">
-    <value></value>
+    <value>Mount</value>
   </data>
   <data name="VaultOpenbaoMountDescription" xml:space="preserve">
-    <value></value>
+    <value>Mount donde se almacena el secreto</value>
   </data>
   <data name="VaultOpenbaoRole" xml:space="preserve">
-    <value></value>
+    <value>Rol</value>
   </data>
   <data name="VaultOpenbaoRoleDescription" xml:space="preserve">
-    <value></value>
+    <value>Nombre o ruta del secreto</value>
   </data>
   <data name="VaultOpenbaoToken" xml:space="preserve">
-    <value></value>
+    <value>Token para Vault/OpenBao</value>
   </data>
   <data name="VaultOpenbaoTokenPropertyDescription" xml:space="preserve">
-    <value></value>
+    <value>Token para acceder al servidor Vault/OpenBao</value>
   </data>
   <data name="VaultOpenbaoSecretEngine" xml:space="preserve">
-    <value></value>
+    <value>Motor de secretos de Vault/OpenBao</value>
   </data>
   <data name="PropertyDescriptionVaultOpenbaoSecretEngine" xml:space="preserve">
-    <value></value>
+    <value>Motor de secretos usado en Vault/OpenBao para almacenar el secreto</value>
   </data>
   <data name="VaultOpenbaoSecretEngineKeyValue" xml:space="preserve">
-    <value></value>
+    <value>KeyValue (nombre de usuario como clave)</value>
   </data>
   <data name="VaultOpenbaoSecretEngineLDAPDynamic" xml:space="preserve">
-    <value></value>
+    <value>Rol dinámico LDAP</value>
   </data>
   <data name="VaultOpenbaoSecretEngineLDAPStatic" xml:space="preserve">
-    <value></value>
+    <value>Rol estático LDAP</value>
   </data>
   <data name="VaultOpenbaoSecretEngineSSHOTP" xml:space="preserve">
-    <value></value>
+    <value>Modo OTP del motor SSH</value>
   </data>
 </root>
