@@ -1,0 +1,14 @@
+mRemoteNG/Config/Settings/SettingsLoader.cs
+  h_18279564137d3b 2,4,145-147,149-150,159-171,193-197,200,204-205,208,212-213,216,220-277
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "dc038b11abd9ae4f6018aeb4fce1a0df35371ca0",
+  "prompts": {},
+  "humans": {
+    "h_18279564137d3b": {
+      "author": "Diego Fernández Fernández <diegoff@tempe.es>"
+    }
+  }
+}
