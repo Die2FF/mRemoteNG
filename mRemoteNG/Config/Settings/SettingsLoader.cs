@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using mRemoteNG.App;
@@ -140,8 +142,12 @@ namespace mRemoteNG.Config.Settings
 
         private void SetToolbarsDefault()
         {
-            ToolStripPanelFromString("top").Join(_quickConnectToolStrip, new Point(300, 0));
+            ResetAllToolbarLocations();
+            AddMainMenuPanel();
+
             _quickConnectToolStrip.Visible = true;
+            JoinOnMainMenuRow(_quickConnectToolStrip, 0);
+
             ToolStripPanelFromString("bottom").Join(_externalToolsToolStrip, new Point(3, 0));
             _externalToolsToolStrip.Visible = false;
         }
@@ -150,9 +156,19 @@ namespace mRemoteNG.Config.Settings
         {
             ResetAllToolbarLocations();
             AddMainMenuPanel();
-            AddExternalAppsPanel();
-            AddQuickConnectPanel();
-            AddMultiSshPanel();
+
+            // Toolbars saved on the first row of the top panel must be joined relative to the
+            // main menu (and to each other) instead of at their absolute saved X. The menu
+            // width depends on the UI language, theme and DPI, so an X that used to fit to the
+            // right of the menu can overlap it after a restart; ToolStripPanel.Join then
+            // silently moves the toolbar to a new row and can push the menu to the right.
+            List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars = [];
+
+            AddExternalAppsPanel(mainMenuRowToolbars);
+            AddQuickConnectPanel(mainMenuRowToolbars);
+            AddMultiSshPanel(mainMenuRowToolbars);
+
+            JoinMainMenuRowToolbars(mainMenuRowToolbars);
         }
 
         /// <summary>
@@ -174,30 +190,91 @@ namespace mRemoteNG.Config.Settings
             SetToolstripGripStyle(_mainMenu);
             ToolStripPanel toolStripPanel = ToolStripPanelFromString("top");
             toolStripPanel.Join(_mainMenu, new Point(3, 0));
+
+            // The menu must be laid out before other toolbars are joined next to it,
+            // otherwise its Width is still stale and the following toolbars overlap it.
+            toolStripPanel.PerformLayout();
+            _mainMenu.PerformLayout();
         }
 
-        private void AddQuickConnectPanel()
+        private void AddQuickConnectPanel(List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars)
         {
             SetToolstripGripStyle(_quickConnectToolStrip);
             _quickConnectToolStrip.Visible = Properties.Settings.Default.QuickyTBVisible;
-            ToolStripPanel toolStripPanel = ToolStripPanelFromString(Properties.Settings.Default.QuickyTBParentDock);
-            toolStripPanel.Join(_quickConnectToolStrip, Properties.Settings.Default.QuickyTBLocation);
+            AddToolbarPanel(_quickConnectToolStrip, Properties.Settings.Default.QuickyTBParentDock,
+                            Properties.Settings.Default.QuickyTBLocation, mainMenuRowToolbars);
         }
 
-        private void AddExternalAppsPanel()
+        private void AddExternalAppsPanel(List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars)
         {
             SetToolstripGripStyle(_externalToolsToolStrip);
             _externalToolsToolStrip.Visible = Properties.Settings.Default.ExtAppsTBVisible;
-            ToolStripPanel toolStripPanel = ToolStripPanelFromString(Properties.Settings.Default.ExtAppsTBParentDock);
-            toolStripPanel.Join(_externalToolsToolStrip, Properties.Settings.Default.ExtAppsTBLocation);
+            AddToolbarPanel(_externalToolsToolStrip, Properties.Settings.Default.ExtAppsTBParentDock,
+                            Properties.Settings.Default.ExtAppsTBLocation, mainMenuRowToolbars);
         }
 
-        private void AddMultiSshPanel()
+        private void AddMultiSshPanel(List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars)
         {
             SetToolstripGripStyle(_multiSshToolStrip);
             _multiSshToolStrip.Visible = Properties.Settings.Default.MultiSshToolbarVisible;
-            ToolStripPanel toolStripPanel = ToolStripPanelFromString(Properties.Settings.Default.MultiSshToolbarParentDock);
-            toolStripPanel.Join(_multiSshToolStrip, Properties.Settings.Default.MultiSshToolbarLocation);
+            AddToolbarPanel(_multiSshToolStrip, Properties.Settings.Default.MultiSshToolbarParentDock,
+                            Properties.Settings.Default.MultiSshToolbarLocation, mainMenuRowToolbars);
+        }
+
+        private void AddToolbarPanel(ToolStrip toolbar, string parentDock, Point savedLocation,
+                                     List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars)
+        {
+            // Defer the toolbars that belong to the main menu row so they can be joined
+            // relative to the menu once it has been laid out.
+            if (BelongsToMainMenuRow(parentDock, savedLocation))
+            {
+                mainMenuRowToolbars.Add((toolbar, savedLocation));
+                return;
+            }
+
+            ToolStripPanelFromString(parentDock).Join(toolbar, savedLocation);
+        }
+
+        private void JoinMainMenuRowToolbars(List<(ToolStrip Toolbar, Point SavedLocation)> mainMenuRowToolbars)
+        {
+            // Preserve the user's left-to-right order on the row, chaining each toolbar
+            // after the previously placed one so they never overlap.
+            int x = _mainMenu.Right;
+            foreach ((ToolStrip toolbar, _) in mainMenuRowToolbars.OrderBy(item => item.SavedLocation.X))
+            {
+                if (!toolbar.Visible)
+                {
+                    // Invisible toolbars still need a parent, but must not consume row space.
+                    ToolStripPanelFromString("top").Join(toolbar, new Point(x, _mainMenu.Top));
+                    continue;
+                }
+
+                x = JoinAt(toolbar, x);
+            }
+        }
+
+        private void JoinOnMainMenuRow(ToolStrip toolbar, int extraSpacing)
+        {
+            JoinAt(toolbar, _mainMenu.Right + extraSpacing);
+        }
+
+        private int JoinAt(ToolStrip toolbar, int x)
+        {
+            ToolStripPanel toolStripPanel = ToolStripPanelFromString("top");
+            toolStripPanel.Join(toolbar, new Point(x, _mainMenu.Top));
+            toolStripPanel.PerformLayout();
+            toolbar.PerformLayout();
+            return toolbar.Right;
+        }
+
+        private static bool BelongsToMainMenuRow(string parentDock, Point savedLocation)
+        {
+            if (!string.Equals(parentDock, "Top", StringComparison.OrdinalIgnoreCase))
+                return false;
+
+            // Row 0 of the top panel holds the main menu, so its saved Y is always 0 regardless
+            // of DPI or theme. Anything on a lower row keeps its absolute coordinates.
+            return savedLocation.Y == 0;
         }
 
         private void SetToolstripGripStyle(ToolStrip toolbar)
