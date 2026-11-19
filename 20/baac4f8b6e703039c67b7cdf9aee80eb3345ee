@@ -1,0 +1,14 @@
+AGENTS.md
+  h_18279564137d3b 1-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "20baac4f8b6e703039c67b7cdf9aee80eb3345ee",
+  "prompts": {},
+  "humans": {
+    "h_18279564137d3b": {
+      "author": "Diego Fernández Fernández <diegoff@tempe.es>"
+    }
+  }
+}
